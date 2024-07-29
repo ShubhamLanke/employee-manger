@@ -1,5 +1,4 @@
 package com.example.employee_manager.service;
 
-public interface EmployeeService {
-
+public class EmployeeServiceImpl {
 }
