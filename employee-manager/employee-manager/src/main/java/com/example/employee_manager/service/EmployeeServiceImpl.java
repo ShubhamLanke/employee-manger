@@ -35,7 +35,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     public Employee findEmployeeById(Long id){
-        return employeeRepository.findEmployeeById(id).orElseThrow(() -> new UserNotFoundException("User By Id"+ id+ "was not found"));
+        return employeeRepository.findEmployeeById(id)
+                .orElseThrow(() -> new UserNotFoundException("User By Id"+ id+ "was not found"));
     }
 
     public void deleteEmployee(Long id){
