@@ -39,4 +39,7 @@ public class EmployeeServiceImpl implements EmployeeService{
                 .orElseThrow(() -> new UserNotFoundException("User By Id"+ id+ "was not found"));
     }
 
+    public void deleteEmployee(Long id){
+        employeeRepository.deleteEmployeeById(id);
+    }
 }
