@@ -19,15 +19,4 @@ import { Employee } from './employee';
             return this.http.get<Employee>(`${this.apiServerUrl}/employee/${employeeId}`);
         }
 
-        public addEmployees (employee : Employee): Observable<Employee> {
-            return this.http.post<Employee>(`${this.apiServerUrl}/employee/all`, employee);
-        }
-
-        public updateEmployees (employee : Employee): Observable<Employee> {
-            return this.http.put<Employee>(`${this.apiServerUrl}/employee/update`, employee);
-        }
-
-        public deleteEmployees (employeeId : number): Observable<void> {
-            return this.http.delete<void>(`${this.apiServerUrl}/employee/delete/${employeeId}`);
-        }
     }
