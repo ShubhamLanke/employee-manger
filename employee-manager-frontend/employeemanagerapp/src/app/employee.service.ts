@@ -23,5 +23,9 @@ import { Employee } from './employee';
             return this.http.post<Employee>(`${this.apiServerUrl}/employee/all`, employee);
         }
 
+        public updateEmployees (employee : Employee): Observable<Employee> {
+            return this.http.put<Employee>(`${this.apiServerUrl}/employee/update`, employee);
+        }
+
         
     }
