@@ -1,9 +1,10 @@
 package com.example.employee_manager.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class Employee implements Serializable {
@@ -17,7 +18,9 @@ public class Employee implements Serializable {
     private String jobRole;
     private String mobileNumber;
     private String imageUrl;
-    private LocalDate createdOn;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime createdOn;
 
     @Column(nullable = false, updatable = false)
     private String employeeCode;
@@ -26,7 +29,7 @@ public class Employee implements Serializable {
 
     public Employee(Long id, String name, String email,
                     String jobRole, String mobileNumber,
-                    String imageUrl, LocalDate createdOn, String employeeCode) {
+                    String imageUrl, LocalDateTime createdOn, String employeeCode) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -51,14 +54,6 @@ public class Employee implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public LocalDate getDate() {
-        return createdOn;
-    }
-
-    public void setDate(LocalDate date) {
-        this.createdOn = date;
     }
 
     public String getEmail() {
@@ -91,6 +86,14 @@ public class Employee implements Serializable {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public LocalDateTime getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(LocalDateTime createdOn) {
+        this.createdOn = createdOn;
     }
 
     public String getEmployeeCode() {
