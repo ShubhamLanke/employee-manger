@@ -1,5 +1,26 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<div class="container mt-4">
+  <!-- Heading -->
+  <div class="row mb-4">
+    <div class="col">
+      <h1 class="text-center">Employee Directory</h1>
+    </div>
+  </div>
+  
+  <!-- Search Bar -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search employees...">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button"><i class="fa fa-search"></i> Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Employee Cards -->
   <div class="row">
     <div *ngFor="let employee of employees" class="col-md-6 col-xl-3">
       <div class="card m-b-30">
@@ -15,7 +36,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><i class="fa fa-envelope float-right"></i>{{ employee.email }}</li>
           <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : {{ employee.mobileNumber }}</li>
-          <li class="list-group-item"><i class="fa fa-phone float-right"></i>Joined On : {{ employee.createdOn }}</li>
+          <li class="list-group-item"><i class="fa fa-calendar float-right"></i>Joined On : {{ employee.createdOn }}</li>
         </ul>
         <div class="card-body">
           <div class="float-right btn-group btn-group-sm">
