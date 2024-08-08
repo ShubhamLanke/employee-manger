@@ -2,9 +2,11 @@ package com.example.employee_manager.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Employee implements Serializable {
@@ -19,8 +21,9 @@ public class Employee implements Serializable {
     private String mobileNumber;
     private String imageUrl;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime createdOn;
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date createdOn;
 
     @Column(nullable = false, updatable = false)
     private String employeeCode;
@@ -29,7 +32,7 @@ public class Employee implements Serializable {
 
     public Employee(Long id, String name, String email,
                     String jobRole, String mobileNumber,
-                    String imageUrl, LocalDateTime createdOn, String employeeCode) {
+                    String imageUrl, Date createdOn, String employeeCode) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -88,11 +91,11 @@ public class Employee implements Serializable {
         this.imageUrl = imageUrl;
     }
 
-    public LocalDateTime getCreatedOn() {
+    public Date getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(LocalDateTime createdOn) {
+    public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
     }
 
