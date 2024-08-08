@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -20,10 +21,7 @@ public class Employee implements Serializable {
     private String jobRole;
     private String mobileNumber;
     private String imageUrl;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date createdOn;
+    private LocalDate createdOn;
 
     @Column(nullable = false, updatable = false)
     private String employeeCode;
@@ -32,7 +30,7 @@ public class Employee implements Serializable {
 
     public Employee(Long id, String name, String email,
                     String jobRole, String mobileNumber,
-                    String imageUrl, Date createdOn, String employeeCode) {
+                    String imageUrl, LocalDate createdOn, String employeeCode) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -91,11 +89,11 @@ public class Employee implements Serializable {
         this.imageUrl = imageUrl;
     }
 
-    public Date getCreatedOn() {
+    public LocalDate getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(Date createdOn) {
+    public void setCreatedOn(LocalDate createdOn) {
         this.createdOn = createdOn;
     }
 

@@ -26,7 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     public Employee addEmployee(Employee employee){
         employee.setEmployeeCode(UUID.randomUUID().toString());
-        employee.setCreatedOn(new Date());
+        employee.setCreatedOn(LocalDate.now());
         return employeeRepository.save(employee);
     }
 
