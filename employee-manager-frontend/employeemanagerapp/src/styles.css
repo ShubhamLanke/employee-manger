@@ -8,7 +8,7 @@ body{
 .card {
     border: none;
     -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px 0 #0000000d;
     margin-bottom: 30px;
 }
 .w-60 {
@@ -32,4 +32,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 a {
     color: #707070;
+}
+
+.list-group-item {
+    border-bottom: 1px solid #ddd !important;
+    padding: 10px !important;
+    margin: 0 !important;
 }
