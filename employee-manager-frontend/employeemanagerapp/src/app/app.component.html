@@ -44,7 +44,7 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+    <div class="container mt-4" id="main-container">
         <!-- Employee Cards -->
         <div class="row">
             <div *ngFor="let employee of employees" class="col-md-6 col-xl-3">
@@ -104,7 +104,18 @@
                             <label for="employeeEmail">Email address</label>
                             <input type="email" class="form-control" id="employeeEmail" placeholder="Enter email">
                         </div>
-                        <!-- Add more fields as needed -->
+                        <div class="form-group">
+                            <label for="employeeJobRole">Job Role</label>
+                            <input type="text" class="form-control" id="employeeJobRole" placeholder="Enter job role">
+                        </div>
+                        <div class="form-group">
+                            <label for="employeeMobileNumber">Mobile Number</label>
+                            <input type="text" class="form-control" id="employeeMobileNumber" placeholder="Enter mobile number">
+                        </div>
+                        <div class="form-group">
+                            <label for="employeeImageUrl">Image URL</label>
+                            <input type="text" class="form-control" id="employeeImageUrl" placeholder="Enter image URL">
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -157,7 +168,18 @@
                             <label for="editEmployeeEmail">Email address</label>
                             <input type="email" class="form-control" id="editEmployeeEmail" placeholder="Enter email">
                         </div>
-                        <!-- Add more fields as needed -->
+                        <div class="form-group">
+                            <label for="editEmployeeJobRole">Job Role</label>
+                            <input type="text" class="form-control" id="editEmployeeJobRole" placeholder="Enter job role">
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmployeeMobileNumber">Mobile Number</label>
+                            <input type="text" class="form-control" id="editEmployeeMobileNumber" placeholder="Enter mobile number">
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmployeeImageUrl">Image URL</label>
+                            <input type="text" class="form-control" id="editEmployeeImageUrl" placeholder="Enter image URL">
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
