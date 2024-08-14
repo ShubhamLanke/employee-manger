@@ -1,15 +1,11 @@
 package com.example.employee_manager.service;
-
 import com.example.employee_manager.exception.UserNotFoundException;
 import com.example.employee_manager.model.Employee;
 import com.example.employee_manager.repository.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
