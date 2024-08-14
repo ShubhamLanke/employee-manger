@@ -1,7 +1,5 @@
 package com.example.employee_manager.service;
-
 import com.example.employee_manager.model.Employee;
-
 import java.util.List;
 
 public interface EmployeeService {
