@@ -95,32 +95,32 @@
                 </div>
                 <div class="modal-body">
                     <!-- Form content for adding employee goes here -->
-                    <form>
+                    <form #addForm="ngForm" (ngSubmit)="onAddEmployee(addForm)">
                         <div class="form-group">
                             <label for="employeeName">Name</label>
-                            <input type="text" class="form-control" id="employeeName" placeholder="Enter name">
+                            <input type="text" ngModel name="name" class="form-control" id="employeeName" placeholder="Enter name">
                         </div>
                         <div class="form-group">
                             <label for="employeeEmail">Email address</label>
-                            <input type="email" class="form-control" id="employeeEmail" placeholder="Enter email">
+                            <input type="email" ngModel name="email" class="form-control" id="employeeEmail" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="employeeJobRole">Job Role</label>
-                            <input type="text" class="form-control" id="employeeJobRole" placeholder="Enter job role">
+                            <input type="text" ngModel name="jobRole" class="form-control" id="employeeJobRole" placeholder="Enter job role">
                         </div>
                         <div class="form-group">
                             <label for="employeeMobileNumber">Mobile Number</label>
-                            <input type="text" class="form-control" id="employeeMobileNumber" placeholder="Enter mobile number">
+                            <input type="text" ngModel name="mobileNumber" class="form-control" id="employeeMobileNumber" placeholder="Enter mobile number">
                         </div>
                         <div class="form-group">
                             <label for="employeeImageUrl">Image URL</label>
-                            <input type="text" class="form-control" id="employeeImageUrl" placeholder="Enter image URL">
+                            <input type="text" ngModel name="imageUrl" class="form-control" id="employeeImageUrl" placeholder="Enter image URL">
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" id="add-employee-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Save changes</button>
+                        </div>    
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add Employee</button>
                 </div>
             </div>
         </div>
